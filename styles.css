@@ -25,6 +25,7 @@ body{
     border-radius: 1rem;
     overflow: auto;
     padding: 0 1.5rem 0 1.5rem;
+    z-index: 1;
 }
 
 .music-player{
@@ -36,6 +37,7 @@ body{
     display: flex ;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
 }
 
 a{
@@ -131,12 +133,11 @@ a{
     border-radius: 100px;
     padding: 0.25rem 1rem;
     font-weight: 700;
-    margin-top:0.5rem ;
     height: 2rem;
     width: fit-content;
 }
 
-.darkbadge{
+.dark-badge{
     background-color: #000;
     color: white;
 }
@@ -349,4 +350,133 @@ height: 3.5rem;
     background-color: #1bd760;
     border-radius: 50%;
     margin-top: -6px;
+}
+.footer-options{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    opacity: 0.7;
+}
+
+.lib-icon-footer{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.home, .search, .your-library, .premium{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.7rem;
+}
+
+.home i, .search i, .premium i{
+    font-size: 1.5rem;
+}
+.hamburger{
+    width: 2.5rem;
+    height: 2rem;
+    margin-right: 1rem;
+}
+
+
+.btn_one{
+    font-size: 1.5rem;
+    font-weight: 700;
+    position: absolute;
+    top: 1rem;
+    z-index: 100;
+    right:1.25rem;
+}
+
+.sidebar-menu{
+    position: fixed;
+    left: -1050px;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    z-index: 100;
+}
+
+.hamburger-options .layer1 ul li{
+list-style: none;
+font-size: 1.25rem;
+padding:0.75rem 0 0.75rem 0;
+font-weight: 700;
+}
+
+.hamburger-options .layer2 .line{
+   width:10%;
+   margin-left:2.5rem;
+   border-top: 3px solid white;
+   opacity: 1;
+}
+
+.hamburger-options .layer3{
+    margin-top: 1.5rem;
+}
+
+.hamburger-options .layer3 ul li{
+list-style: none;
+font-size: 0.85rem;
+padding:0.25rem 0 0.25rem 0;
+font-weight: 700;
+}
+
+.sidebar-menu .btn_two{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    position: absolute;
+    top: 1rem;
+    right:1.25rem;
+    opacity: 0;
+}
+
+#check{
+    display: none;
+}
+
+.btn_one:hover, .btn_two:hover{
+    cursor: pointer;
+}
+
+#check:checked ~.sidebar-menu{
+left: 0;
+}
+
+
+
+
+@media(max-width:1000px) {
+    .sticky-nav{
+        background-color: #232323;
+        width: 100%;
+    }
+    .main-content{
+        padding: 0;
+    }
+
+    h2{
+        margin: 1rem;
+    }
+
+    .main{
+        padding: 0;
+    }
+
+    .sticky-nav .hide{
+        display: none;
+    }
+
+    .music-player .hide{
+        display: none;
+    }
+}
+
+@media(min-width:1000px){
+    .phone{
+        display: none;
+    }
 }
